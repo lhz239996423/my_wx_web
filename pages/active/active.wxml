@@ -1,0 +1,27 @@
+<!--pages/active/active.wxml-->
+<view>
+  <view class="header">
+    <text>活动</text>
+  </view>
+  <view class="active-name">
+    <text>限时折扣</text>
+  </view>
+  <!-- item存储着一种商品的信息，是一个一维数组 -->
+  <view class="active" wx:for="{{item}}" wx:key="index">
+    <view class="active-item">
+      <!-- item.src存放商品图片的路径 -->
+      <image src="{{item.src}}" mode="widthFix"></image>
+      <!-- item.id存放商品ID，绑定了点击动作跳转商品详情页面 -->
+      <text bindtap="activeDetail" class="title" id="{{item.id}}">{{item.title}}</text>
+      <text class="intro">{{item.text}}</text>
+      <text class="new_price">￥{{item.new_price}}</text>
+      <text class="old_price">￥{{item.old_price}}</text>
+      <text class="count">库存：{{item.count}}</text>
+      <!-- down_time[]存储了所有商品的倒计时 -->
+      <view class="down_time">
+        <!-- down_time[index]index是对应商品在数组中的下标 -->
+        <text>{{down_time[index]}}</text>
+      </view>
+    </view>
+  </view>
+</view>

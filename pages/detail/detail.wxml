@@ -1,0 +1,42 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <view class="head">
+    <text>商品</text>
+  </view>
+  <!-- 直接引用本地存储的商品信息，info.src存放商品图片所在路径 -->
+  <image src="{{info.src}}" mode="widthFix"></image>
+  
+  <view class="wrapper">
+    <view class="header">
+      <text class="title">{{info.title}}</text>
+      <view class="collection">
+        <image src="/assets/static/collection.png"></image>
+        <!-- 商品信息收藏状态，若没有定义"取消收藏"则显示默认字段"收藏" -->
+        <text>{{info.isLike?"取消收藏":"收藏"}}</text>
+      </view>
+    </view>
+    <view class="price">
+      <!-- info.new_price存放商品现价 -->
+      <text class="new_price">￥{{info.new_price}}</text>
+      <!-- info.old_price存放商品原价 -->
+      <text class="old_price">￥{{info.old_price}}</text>
+    </view>
+    <view>
+      <!-- info.text存放商品说明介绍 -->
+      <text>{{info.text}}</text>
+    </view>
+    <view style="height:50px"></view>
+  </view>
+
+  <view class="options">
+    <!-- 显示购物车图标 -->
+    <view class="car">
+      <image src="/assets/tabBarIcon/car2.png"></image>
+      <text class="count">2</text>
+    </view>
+    <!-- 3个带背景色的字段 -->
+    <view class="shop">前往商场</view>
+    <view class="add">加入购物车</view>
+    <view class="pay">前往付款</view>
+  </view>
+</view>

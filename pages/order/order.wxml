@@ -1,0 +1,48 @@
+<!--pages/order/order.wxml-->
+<view>
+  <view class="userInfo">
+    <view class="icon">
+      <!-- 添加定位小图标 -->
+      <image src="/assets/static/local.png"></image>
+    </view>
+    <view class="info">
+      <!-- userInfo.nick_name存放用户名字 -->
+      <text class="nick_name">{{userInfo.nick_name}}</text>
+      <!-- userInfo.tel存放用户电话 -->
+      <text class="tel">{{userInfo.tel}}</text>
+      <!-- userInfo.address存放用户地址 -->
+      <text class="address">{{userInfo.address}}</text>
+    </view>
+    <view class="right">
+      <image src="/assets/static/right.png"></image>
+    </view>
+  </view>
+  <view class="orderInfo">
+    <!-- 列表渲染订单商品信息 -->
+    <view class="table">
+      <view class="tr">
+        <!-- 头部固定字段 -->
+        <view class="th">商品</view>
+        <view class="th">数量</view>
+        <view class="th">总价</view>
+      </view>
+      <!-- 遍历所有商品显示在列表中 -->
+      <view class="tr" wx:for="{{carList}}">
+        <view class="td">{{item.title}}</view>
+        <view class="td">{{item.num}}</view>
+        <view class="td">{{item.new_price*item.num}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="input">
+    <!-- 添加一个用户输入框 -->
+    <input placeholder="填写备注"></input>
+  </view>
+
+  
+  <view class="pay">
+    <text>总价</text>
+    <text style="color:red">￥{{total}}</text>
+    <button class="order" bindtap="order">前往支付</button>
+  </view>
+</view>

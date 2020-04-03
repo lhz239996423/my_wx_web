@@ -1,0 +1,38 @@
+<!--pages/car/car.wxml-->
+<view>
+  <!-- 获取所有商品信息，index为商品在数组中的下标 -->
+  <view wx:for="{{carList}}" wx:key="index">
+    <view class="item">
+      <view class="photo">
+        <!-- item.src存放商品图片的路径 -->
+        <image src="{{item.src}}"></image>
+      </view>
+      <view class="data">
+        <!-- item.title存放商品的介绍说明 -->
+        <text class="title">{{item.title}}</text>
+        <view class="line">
+          <!-- item.new_price存放商品的现价 -->
+          <text class="price">￥{{item.new_price}}</text>
+          <view class="count">
+            <!-- 设定标签data-id值为商品所在数组下标，点击事件绑定增加商品方法 -->
+            <button data-id="{{index}}" bindtap="add">+</button>
+            <!-- item.num存放购物车中的商品数量 -->
+            <view class="num">
+              {{item.num}}
+            </view>
+            <!-- 设定标签data-id值为商品所在数组下标，点击事件绑定减少商品方法 -->
+            <button data-id="{{index}}" bindtap="minus">-</button>
+          </view>
+          <!-- 设定标签data-id值为商品所在数组下标，点击事件绑定删除商品方法 -->
+          <button class="delete" data-id="{{index}}" bindtap="delete"><image src="/assets/static/delete.png"></image></button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="info">
+    <text>总价</text>
+    <text style="color:red">￥{{total}}</text>
+    <!-- 给按钮绑定了一个点击跳转动作 -->
+    <button class="order" bindtap="order">下单</button>
+  </view>
+</view>

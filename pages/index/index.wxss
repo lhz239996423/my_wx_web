@@ -1,0 +1,43 @@
+/**index.wxss**/
+.banner{
+  width:100%;
+}
+
+.active{
+  margin-top:40rpx;
+}
+
+.active-item{
+  width:25%;
+  float:left;
+}
+
+.active-item image{
+  display: block;
+  margin:0 auto;
+  width: 100rpx;
+  height:100rpx;
+}
+
+.active-item text{
+  margin:20rpx;
+  font-size: 36rpx;
+  display: block;
+  text-align: center;
+}
+
+.movie{
+  width:100%;
+}
+
+.movie-item text{
+  display: block;
+  text-align: center;
+  line-height:100rpx;
+}
+.movie-item image{
+  display: block;
+  width:90%;
+  margin:0 auto;
+  line-height:100rpx;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>例子</title>
+    <style>
+        html , body {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <div class="box"></div>
+        <script>
+                // 
+                var box = document.querySelector('.box')
+
+           
+                // 
+                box.onclick = function(){
+                  
+                    
+                    animate(this,{
+                        width:400,
+                        height:400,
+                        borderRadius:200,
+                        marginLeft:500
+                    },function(){
+                        animate(box,{
+                            width:100,
+                            height:100,
+                            marginTop:300
+                        },function(){
+                            animate(box,{
+                                marginTop:100,
+                                marginLeft:800
+                            })
+                        })
+                    })
+                }
+                // 
+                function animate(dom,option,callback){
+                    clearInterval(dom.timer)
+                    dom.timer = setInterval(function(){
+                        var isChange = true;
+                        for(var k in option){
+                            var current = parseInt(window.getComputedStyle(dom,null)[k])
+                            var target = parseInt(option[k])
+                            var speed = (target - current) / 10;
+                            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
+                            if(current!=target){
+                                isChange = false;
+                            }
+                            dom.style[k]=current + speed +"px";
+                        }
+                        if(isChange){
+                            clearInterval(dom.timer)
+                            callback && callback();
+                            return;
+                        }
+                    },30)
+                }
+        </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* pages/detail/detail.wxss */
+.head{
+  background:#1296db;
+  height:80rpx;
+}
+
+.head text{
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size:36rpx;
+}
+
+.wrapper{
+  padding:10px;
+  border-bottom: 1px solid #ccc;
+}
+.title{
+  display: inline-block;
+  vertical-align: top;
+  width:75%;
+  padding-right:5px;
+  font-size: 14px;
+}
+.collection{
+  display: inline-block;
+  width:20%;
+  border-left: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.collection image{
+  display: block;
+  width:24px;
+  height:24px;
+  margin:0 auto;
+}
+.collection text{
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+
+.price{
+  display: block;
+}
+
+.price .new_price{
+  color:red;
+  margin:5px;
+}
+
+.price .old_price{
+  font-size: 12px;
+  color:#000;
+  margin:5px;
+  text-decoration: line-through;
+}
+
+.options{
+  position: fixed;
+  height:50px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  bottom: 0;
+}
+
+.options view{
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  line-height: 50px;
+  color:#fff;
+}
+.options view image{
+  position: relative;
+  margin: 0 auto;
+  width:25px;
+  height:25px;
+  top:10px;
+}
+.options view .count{
+  position: absolute;
+  z-index: 999;
+  border-radius: 50%;
+  background: red;
+  width:20px;
+  height:20px;
+  margin-top:8px;
+  margin-left:-8px;
+  color:#fff;
+  font-size:12px;
+  line-height:20px;
+}
+.options .car{
+  background: #fff;
+}
+.options .shop{
+  background: #FEA700;
+}
+.options .add{
+  background: #0292DB;
+}
+.options .pay{
+  background: #66C2A9
+}

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/active/active",
+    "pages/car/car",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/order/order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "双十一",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/tabBarIcon/home2.png",
+        "selectedIconPath": "assets/tabBarIcon/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/active/active",
+        "iconPath": "assets/tabBarIcon/active2.png",
+        "selectedIconPath": "assets/tabBarIcon/active1.png",
+        "selectedColor": "#000",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "iconPath": "assets/tabBarIcon/car2.png",
+        "selectedIconPath": "assets/tabBarIcon/car1.png",
+        "selectedColor": "#000",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "assets/tabBarIcon/mine2.png",
+        "selectedIconPath": "assets/tabBarIcon/mine1.png",
+        "selectedColor": "#000",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

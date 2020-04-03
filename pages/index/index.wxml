@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view>
+  <view class="banner">
+    <swiper indicator-dots="true" autoplay="true" circular="true" interval="3000" >
+        <block wx:for="{{background}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view>
+    <!-- 读取并遍历8个小图标的信息 -->
+    <view class="active" wx:for="{{navList}}" wx:key="index">
+      <!-- item是1个一维数组 -->
+      <view class="active-item">
+        <!-- 放置小图标图片，item.src值为图片所在路径 -->
+        <image src="{{item.src}}"></image>
+        <!-- 放置小图标文字说明，item.text值为文字说明 -->
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+    <view class="movie" wx:for="{{movieList}}" wx:key="index">
+      <view class="movie-item">
+        <text>{{item.name}}</text>
+        <image src="{{item.src}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
